@@ -1,0 +1,52 @@
+html
+    head
+        title FinalS
+        link(rel="stylesheet" href="../CSS/home.css")
+        link(rel="stylesheet" href="../CSS/tool.css")
+        link(rel="stylesheet" href="../CSS/login.css")
+    
+    
+    body
+        .main-page
+            .main-nav
+                .nav-left
+                    h1 AIO
+                .nav-right
+                    ul
+                        li Tools
+                        li About Me
+                        li Log-in
+            .main-title
+                .h-box
+                    h1 ALL IN ONE
+                .box
+                    .a-box.one 
+                        a START
+                    .a-box.two
+                        a SIGN-UP    
+        
+        .tool
+            .sub-tool.t1
+                h1(onclick="window.location ='/net_resolver'") NETWORK RESOLVER            
+            .sub-tool.t2
+                h1(onclick="window.open('/portbinding', '_blank');window.location ='/portwaiting'") PORT
+            .sub-tool.t3
+                h1(onclick="window.location ='/organizer'") FILE MANAGER   
+
+        .account 
+            .login 
+                form(method="post",action="/login")
+                    p  
+                        input(type="text" name="email" placeholder="Email...")
+                    p  
+                        input(type="password" name="password" placeholder="Password...") 
+                    button(type="submit") Log In                               
+            .sign-up
+                form(method="post" action="/signup") 
+                    p  
+                        input(type="text" name="email" placeholder="Email...")
+                    p  
+                        input(type="password" name="password" placeholder="Password...") 
+                    p  
+                        input(type="password" name="checkpass" placeholder="Retype Password")
+                    button(type="submit") Sign Up

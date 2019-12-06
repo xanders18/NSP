@@ -1,0 +1,28 @@
+.account{
+    grid-row: 3/4;
+    display:grid;
+    grid-template-columns: 50% 50%;   
+    justify-content: center;    
+}
+
+.login{
+    grid-column: 1/2;  
+    text-align: center;
+    border-right: 1px solid gray
+}
+
+.sign-up{
+    grid-column: 2/3;
+    text-align: center;
+    
+}
+
+.login form{
+    margin:0rem auto;
+    margin-top: 12rem;
+}
+
+.sign-up form{   
+    margin:0rem auto;
+    margin-top: 10.2rem;
+}

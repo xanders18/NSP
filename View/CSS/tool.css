@@ -1,0 +1,49 @@
+.tool{
+    display: flex; 
+    flex-wrap: wrap;  
+    grid-row: 2/3;
+    margin:3rem 0;
+}
+
+.sub-tool{
+    min-width:20%;
+    width:33.33%;    
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    transition:0.3s;
+}
+
+.sub-tool h1{
+    color:white;    
+}
+
+
+.sub-tool:hover{
+    transform: scale(1.07);        
+    background-size:cover;
+    background-position:center;
+    text-shadow: 1px 1px 10px #ffffff;
+    cursor: pointer;
+    transition:0.8s;
+}
+
+
+
+.t1{
+    background:linear-gradient(rgba(0, 0, 0, 0.62),rgba(0, 0, 0, 0.63)),url(../image/1x.jpg);
+    background-size: cover;
+}
+
+.t2{
+    background:linear-gradient(rgba(0, 0, 0, 0.62),rgba(0, 0, 0, 0.63)),url(../image/2.jpg);
+    background-size: cover;
+}
+
+.t3{
+    background:linear-gradient(rgba(0, 0, 0, 0.62),rgba(0, 0, 0, 0.63)),url(../image/3.jpg);
+    background-size: cover;
+}
+
+
+

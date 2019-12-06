@@ -1,0 +1,19 @@
+html
+    head
+        title FinalS
+        link(rel="stylesheet" href="file.css")   
+    
+    body
+        script(type="text/javascript" src="file.js")
+        form(method="post" action="/organizer")
+            select(name="choose" id="selected" onchange="change()")
+                option Create File
+                option Copy File
+                option Copy Data
+                option Read File
+                option Create Folder
+                option Delete Folder            
+            input(type="text" name="dir" placeholder="From")
+            input(type="text" name="dest" placeholder="To")
+            textarea(name="msg",placeholder="To",cols="30", rows="10")
+            input(type="submit")         
