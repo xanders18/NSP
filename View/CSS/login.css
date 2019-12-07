@@ -1,4 +1,5 @@
 .account{
+    scroll-behavior: smooth;
     grid-row: 3/4;
     display:grid;
     grid-template-columns: 50% 50%;   

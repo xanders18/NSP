@@ -4,6 +4,8 @@ const mongoose = require('mongoose')
 const bp = require('body-parser')
 
 const app = express()
+const server = require('http').createServer(app)
+const io = require("socket.io").listen(server)
 
 const homeRoute = require('./Routes/home')
 const accountRoute = require('./Routes/account')
@@ -19,12 +21,17 @@ app.use(bp.urlencoded({ extended: false }));
 app.use("/user", accountRoute)
 app.use("/", homeRoute)
 
+
 mongoose.connect(dbURL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
     .then(result => {
-        app.listen(9000, () => {
+        server.listen(9000, () => {
             console.log("Connected")
         })
+    })
+
+    io.sockets.on("connection", socket => {
+        
     })

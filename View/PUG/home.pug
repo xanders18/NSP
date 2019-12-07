@@ -13,19 +13,22 @@ html
                     h1 AIO
                 .nav-right
                     ul
-                        li Tools
-                        li About Me
-                        li Log-in
+                        li 
+                            a(href="#tools") Tools
+                        li 
+                            a(href="#aboutme") About Me
+                        li 
+                            a(href="#account") Log-in
             .main-title
                 .h-box
                     h1 ALL IN ONE
                 .box
                     .a-box.one 
-                        a START
+                        a(href="/chat") START
                     .a-box.two
-                        a SIGN-UP    
+                        a(href="#account") SIGN-UP    
         
-        .tool
+        div(class="tool",id="tools")
             .sub-tool.t1
                 h1(onclick="window.location ='/net_resolver'") NETWORK RESOLVER            
             .sub-tool.t2
@@ -33,7 +36,7 @@ html
             .sub-tool.t3
                 h1(onclick="window.location ='/organizer'") FILE MANAGER   
 
-        .account 
+        div(class="account",id="account")
             .login 
                 form(method="post",action="/user/login")
                     p  
@@ -51,4 +54,4 @@ html
                         input(type="password" name="password" placeholder="Password") 
                     p  
                         input(type="password" name="checkpass" placeholder="Retype Password")
-                    button(type="submit") Sign Up
+                    button(type="submit") Sign Up        
