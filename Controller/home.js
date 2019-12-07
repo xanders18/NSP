@@ -1,13 +1,31 @@
 const path = require("path")
 const jarfile = require('jarfile')
+const nodemailer=require('nodemailer')
+const sendgrid=require('nodemailer-sendgrid-transport')
 
+const netHTML=require('./HTML-JS/net')
+
+let ipAddress,hostName,userIP
+
+
+const transporter=nodemailer.createTransport(sendgrid({
+    auth:{
+        api_key: "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"
+    }
+}))
 
 exports.mainPage=(req,res,next)=>{
     res.render("./PUG/home")
 }
 
-exports.assignment_13 = (req, res, next) => {
-    res.render("./PUG/ass13");
+exports.assignment_13 = (req, res, next) => {    
+    console.log(ipAddress)
+    res.render("./PUG/ass13",{
+        hostIP:ipAddress,
+        hostName:hostName,
+        userIP:userIP
+    });
+    ipAddress=hostName=userIP=""
 }
 
 exports.post_ass13 = async (req, res, next) => {
@@ -16,16 +34,24 @@ exports.post_ass13 = async (req, res, next) => {
         (error, data) => {
             console.log('stdout: ' + data);
             const result = data.split(("\r", "\n"))
-            console.log(result);
+            result.map(data=>{
+                console.log(data);
+            })
+            ipAddress=result[0]
+            hostName=result[1]
+            userIP=result[2]
 
             if (error !== null) {
                 console.log('exec error: ' + error);
             }
-        });
+            return res.redirect("/net_resolver")
+        });     
+    
 }
 
 
 exports.assignment_14 = (req, res, next) => {
+    console.log(req.test)
     res.render("./PUG/ass14")
 }
 
@@ -107,4 +133,15 @@ exports.post_manage = async (req, res, next) => {
                 console.log('exec error: ' + error);
             }
         });
+}
+
+exports.send_email=async (req,res,next)=>{
+    console.log(req.body.email)
+    transporter.sendMail({
+        to:req.body.email,
+        from:"Joker",
+        subject:"Network Resolver",
+        html:netHTML(req.body.hostip,req.body.hostname,req.body.userip)
+    })
+    return res.redirect("/net_resolver")
 }

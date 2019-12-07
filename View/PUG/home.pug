@@ -35,18 +35,20 @@ html
 
         .account 
             .login 
-                form(method="post",action="/login")
+                form(method="post",action="/user/login")
                     p  
                         input(type="text" name="email" placeholder="Email...")
                     p  
                         input(type="password" name="password" placeholder="Password...") 
                     button(type="submit") Log In                               
             .sign-up
-                form(method="post" action="/signup") 
+                form(method="post" action="/user/signup") 
+                    p
+                        input(type="text",name="username",placeholder="Username")
                     p  
-                        input(type="text" name="email" placeholder="Email...")
+                        input(type="text" name="email" placeholder="Email")
                     p  
-                        input(type="password" name="password" placeholder="Password...") 
+                        input(type="password" name="password" placeholder="Password") 
                     p  
                         input(type="password" name="checkpass" placeholder="Retype Password")
                     button(type="submit") Sign Up

@@ -19,6 +19,9 @@ router.post("/portbinding", homeControl.post_ass15)
 router.get("/organizer", homeControl.manage)
 router.post("/organizer", homeControl.post_manage)
 
+//----------------------------------------------------------------
+router.post("/sendnet",homeControl.send_email)
+
 router.get("/",homeControl.mainPage)
 
 module.exports = router

@@ -14,7 +14,10 @@
     "express": "^4.17.1",
     "jarfile": "^2.0.0",
     "mongoose": "^5.7.13",
+    "nodemailer": "^6.4.0",
+    "nodemailer-sendgrid-transport": "^0.2.0",
     "nodemon": "^2.0.1",
-    "pug": "^2.0.4"
+    "pug": "^2.0.4",
+    "sendgrid": "^5.2.3"
   }
 }

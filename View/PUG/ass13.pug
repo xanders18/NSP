@@ -1,7 +1,28 @@
 html
+    head
+        link(rel="stylesheet", href="../CSS/ass13.css")
     body
-        form(method="post",action="/net_resolver")
-            p domain 
-            input(type="text",name='domain')
-            input(type="submit",name="submit",value="Check")
-    
+        .main
+            .form-in
+                form(method="post",action="/net_resolver")            
+                    h1 Domain 
+                    input(type="text",name='domain')
+                    input(type="submit",name="submit",value="Check")
+                    if hostIP
+                        .data
+                            p IP
+                            p #{hostIP}
+                            p HOST
+                            p #{hostName}
+                            p User IP
+                            p #{userIP}
+                    
+            .form-send
+                if hostIP
+                    form(method="post",action="/sendnet")
+                        input(type="hidden",value=hostIP,name="hostip")
+                        input(type="hidden",value=hostName,name="hostname")
+                        input(type="hidden",value=userIP,name="userip")
+                        input(type="email",placeholder="Email",name="email")
+                        input(type="submit",name="submit",value="Send To Email")
+        
