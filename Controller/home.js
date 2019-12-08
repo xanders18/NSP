@@ -15,8 +15,14 @@ const transporter=nodemailer.createTransport(sendgrid({
 }))
 
 exports.mainPage=(req,res,next)=>{
+    if(!req.logedIn){
+        req.logedIn=0
+    }
     res.render("./PUG/home",{
-        err:req.flash('err')
+        err:req.flash('err'),
+        signErr:req.flash('signup'),
+        islogin:req.logedIn
+
     })
 }
 

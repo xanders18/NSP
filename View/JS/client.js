@@ -24,3 +24,7 @@ socket.on("front msg",data=>{
     
     msgform.append(x)
 })
+
+socket.on("teeth",data=>{
+    console.log(data)
+})

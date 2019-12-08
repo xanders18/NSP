@@ -123,8 +123,14 @@ body{
     text-decoration: none;
     padding:0.5rem 0.3rem;
 }
-
-.a-box a:hover{
+.a-box button{
+    color:white;
+    text-decoration: none;
+    padding:0.2rem 0.3rem;
+    background: none;
+    border:none;
+}
+.a-box a:hover,.a-box button:hover{
     color:rgb(159, 255, 3);    
     cursor: pointer;
 }

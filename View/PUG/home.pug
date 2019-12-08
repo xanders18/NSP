@@ -17,16 +17,22 @@ html
                             a(href="#tools") Tools
                         li 
                             a(href="#aboutme") About Me
-                        li 
-                            a(href="#account") Log-in
+                        if islogin < 1
+                            li 
+                                a(href="#account") Log-in
             .main-title
                 .h-box
                     h1 ALL IN ONE
                 .box
                     .a-box.one 
-                        a(href="/chat") START
-                    .a-box.two
-                        a(href="#account") SIGN-UP    
+                        a(href="/chat/messaging") START
+                    if islogin < 1
+                        .a-box.two
+                            a(href="#account") SIGN-UP    
+                    if islogin > 0
+                        form(method="POST",action="/user/logout")                        
+                            .a-box.two
+                                button(type="submit") Log-Out
         
         div(class="tool",id="tools")
             .sub-tool.t1
@@ -39,6 +45,7 @@ html
         div(class="account",id="account")
             .login 
                 form(method="post",action="/user/login")
+                    p #{err}
                     p  
                         input(type="text" name="email" placeholder="Email...")
                     p  
@@ -46,6 +53,7 @@ html
                     button(type="submit") Log In                               
             .sign-up
                 form(method="post" action="/user/signup") 
+                    p #{signErr}
                     p
                         input(type="text",name="username",placeholder="Username")
                     p  
@@ -54,5 +62,5 @@ html
                         input(type="password" name="password" placeholder="Password") 
                     p  
                         input(type="password" name="checkpass" placeholder="Retype Password")
-                    p #{err}
+                    
                     button(type="submit") Sign Up        
