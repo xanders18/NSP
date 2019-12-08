@@ -1,26 +1,57 @@
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue|Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lobster|Tomorrow&display=swap');
+
+
 *{
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
-
+body{
+    background: rgb(56, 56, 56);
+}
+.arrow{
+    margin:3rem;
+}
+.back{
+    background:url(../image/arrow.png);
+    background-size: cover;
+    background-position: top 50% right 20% ;    
+    padding:1rem;
+    border:none;
+}
 .form-in{
     display:flex;
     flex-wrap: wrap;    
     width:60%;
     margin:0.2rem auto;    
     text-align: center;
-    border:1px solid black;
+    border:4px solid greenyellow;
     justify-content: center;
     align-items: center;
+    border-radius:20px;
+    margin-top: 2rem;
+    padding: 2rem;
 }
 
 .input *{
     width:80%;
     margin:0.5rem 0rem;
-    border:1px solid black;
+    border:1px solid greenyellow;
+}
+
+.postit{
+    color:greenyellow !important;
+    background:rgb(56, 56, 56) !important;
+    border:2px solid greenyellow !important;    
+}
+
+.form-in input[type="submit"]:hover{
+    text-shadow: 1px 1px 10px greenyellow;
 }
 
 .input h1{
+    border:none;
     margin: 0.75rem auto;
-    background: red;
+    background:rgb(56, 56, 56);
     color:white;
 }

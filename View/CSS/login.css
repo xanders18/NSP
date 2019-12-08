@@ -66,6 +66,26 @@
     height:100%;
     margin:auto;
     margin-top: 9rem;
+    text-align: center;
+}
+
+.data button{
+    color:greenyellow;
+    border: 2px solid greenyellow;
+    border-radius: 10px;
+    background: white;    
+    padding:0.5rem;
+    width: 100%;
+    margin:0rem auto;  
+    transition:0.5s;  
+}
+
+.data button:hover{
+    border: 2px solid rgb(255, 136, 0);
+    color:rgb(255, 136, 0);
+    box-shadow: 1px 1px 15px rgb(255, 136, 0);
+    transition:0.5s;
+    cursor: pointer;
 }
 
 .inside-form img{
@@ -83,7 +103,7 @@
     position: absolute;
     top:0px;
     left: 0;
-    padding: 4%;
+    padding: 4.2%;
     width: 10%;
     color: rgb(187, 255, 0);
     transition: 0.3s;

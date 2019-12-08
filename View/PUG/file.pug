@@ -5,6 +5,8 @@ html
     
     body
         script(type="text/javascript" src="../JS/file.js")
+        .arrow
+            a(href="http://localhost:9000/",class="back")
         .form-in
             form(method="post" action="/organizer")
                 .input
@@ -18,5 +20,5 @@ html
                         option Delete Folder            
                     input(type="text" name="dir" placeholder="From")
                     input(type="text" name="dest" placeholder="To")
-                    textarea(name="msg",placeholder="Mesasge",cols="30", rows="10")
-                    input(type="submit")         
+                    textarea(name="msg",placeholder="Mesasge",cols="30", rows="10",id="inputarea")
+                    input(type="submit",class="postit")         

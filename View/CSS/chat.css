@@ -1,4 +1,82 @@
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue|Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lobster|Tomorrow&display=swap');
+
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
 body{
     display:grid;
-    
+    grid-template-columns: 20% 80%;
+    margin:0;
+}
+
+.active-user{
+    grid-column: 1/2;
+    height: 100vh;
+    border:1px solid gray;
+    display: grid;
+    grid-template-rows: 10% 90%;
+}
+
+.user-head{
+    grid-row: 1/2;
+    background:rgba(0, 140, 255, 0.575);
+    color:white;
+}
+
+.user-list{
+    grid-row: 2/3;
+    margin:1rem 0;
+}
+
+.user-list p{
+
+}
+
+.msg-box{
+    height: 100vh;
+    grid-column: 2/3;
+    display: grid;
+    grid-template-rows: 90% 10%;
+}
+
+.msgpanel{
+    grid-row: 1/2;
+    background:rgba(158, 158, 158, 0.329);
+}
+
+.msgpanel p{
+    margin:1rem;
+    border:1px solid rgb(0, 195, 255);
+    border-radius: 40px;
+    width:20%;
+    padding:1rem;
+    background: rgb(0, 195, 255) ;
+}
+
+.msg-send{
+    grid-row:2/3;
+    border-top:1px solid gray;
+    background: rgba(247, 210, 3, 0.137);
+}
+
+.msg-send input{
+    width:70%;
+    border-radius: 40px;
+    margin:1.5rem 0.5rem;    
+}
+
+
+.msg-send button{
+    background:url(../image/send.png);
+    background-size: cover;
+    background-position: top 50% right 20% ;    
+    padding:1rem;
+    border:none;
+}
+
+.atright{
+    margin-left:75% !important;    
 }

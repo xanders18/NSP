@@ -1,8 +1,9 @@
 let socket = io.connect()
 let user = []
 
-let msgContainer = document.getElementById("active-user")
+let msgContainer = document.getElementById("user-list")
 let msgform = document.getElementById("msgform")
+let msgPanel=document.getElementById("msgpanel")
 let msg = document.getElementById('msg')
 
 
@@ -13,8 +14,13 @@ msgform.addEventListener("submit", e => {
 
 socket.on("front msg", data => {
     let x = document.createElement("p")
-    x.innerText = data.user + " : " + data.msg
-    msgform.append(x)
+    for(let i=0;i<user.length;i+=2){
+        if(data.user==user[i]){            
+            x.className="atright"
+        }
+    }
+    x.innerText = data.user+ " : " + data.msg
+    msgPanel.append(x)
 })
 
 socket.on("new user", data => {
@@ -29,8 +35,11 @@ socket.on("new user", data => {
     msgContainer.innerHTML = ""
     user.map(users => {
         let x = document.createElement("p")
+        let i=document.createElement("i")
         x.innerText = users
+        i.className="fa fa-male"
         msgContainer.append(x)
+        msgContainer.append(i)
     })
 
 })

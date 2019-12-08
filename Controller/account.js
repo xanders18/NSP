@@ -1,7 +1,6 @@
 const userModel = require("../Models/account")
 const bcrypt = require('bcryptjs')
 
-
 exports.post_signup = async (req, res, next) => {
     const hashPassword = await bcrypt.hash(req.body.password, 12)
     const user=await userModel.findOne({email:req.body.email})
@@ -22,7 +21,6 @@ exports.post_signup = async (req, res, next) => {
     return res.redirect("/")
 }
 
-
 exports.post_login = async (req, res, next) => {
     const user = await userModel.findOne({ email: req.body.email })           
     if (!user) {
@@ -37,9 +35,7 @@ exports.post_login = async (req, res, next) => {
     req.session.email=user.email
     req.session.login = 1
     return res.redirect('/')
-
 }
-
 exports.post_logout=async (req,res,next)=>{
     req.session.destroy(()=>{
         return res.redirect("/");

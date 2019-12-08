@@ -2,10 +2,12 @@ html
     head
         link(rel="stylesheet", href="../CSS/ass13.css")
     body
-        .main
+        .arrow
+            a(href="http://localhost:9000/",class="back")
+        .main            
             .form-in
                 form(method="post",action="/net_resolver")            
-                    h1 Domain 
+                    h1 RESOLVER 
                     input(type="text",name='domain')
                     input(type="submit",name="submit",value="Check")
                     if hostIP

@@ -1,6 +1,7 @@
 let connections
 let user = []
 
+//Socket Middleware
 exports = module.exports = {
   init: (io) => {
     connections = io
@@ -25,10 +26,7 @@ exports = module.exports = {
     connections.on('connection', socket => {            
       socket.username = data
       user.push(data)
-      console.log(data)
-      //console.log(socket.username)
-      connections.emit('new user', { alluser: user })
-      //connections.emit('user',{msg:data})
+      connections.emit('new user', { alluser: user })      
     });
   }
 

@@ -3,12 +3,20 @@ html
         title Chat Finals
         link(rel="stylesheet" href="../CSS/chat.css")
     body
+        script(src='https://kit.fontawesome.com/a076d05399.js')
         div(id="active-user",class="active-user")
+            .user-head
+                h1 Active User
+            div(id="user-list",class="user-list")
 
         .msg-box
-            form(id="msgform")
-                input(type="text",id="msg")
-                button(type="submit",id="send") Send
+            div(id="msgpanel",class="msgpanel")
+                
+    
+            .msg-send
+                form(id="msgform")
+                    input(type="text",id="msg",placeholder="Enter message here..")
+                    button(type="submit",id="send")
             
         script(src="/socket.io/socket.io.js")
         script(src="../JS/client.js",type="text/javascript")
