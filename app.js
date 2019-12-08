@@ -49,6 +49,7 @@ app.use(flash())
 
 app.use((req, res, next) => {
     req.logedIn = req.session.login
+    req.user_email=req.session.email
     next()
 })
 

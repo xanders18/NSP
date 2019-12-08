@@ -34,7 +34,7 @@ exports.post_login = async (req, res, next) => {
         req.flash("err", "Invalid Password!!")
         return res.redirect('/#account')
     }
-
+    req.session.email=user.email
     req.session.login = 1
     return res.redirect('/')
 
