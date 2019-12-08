@@ -5,8 +5,10 @@ html
     body
         .msg-container
 
-        .msgform
+        form(id="msgform")
             input(type="text",id="msg")
-            button(type="submit",id="send")
+            a(href="http://localhost:3000/") oii
+            button(type="submit",id="send") Send
         
         script(src="/socket.io/socket.io.js")
+        script(src="../JS/client.js",type="text/javascript")

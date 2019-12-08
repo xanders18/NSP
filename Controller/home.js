@@ -15,7 +15,9 @@ const transporter=nodemailer.createTransport(sendgrid({
 }))
 
 exports.mainPage=(req,res,next)=>{
-    res.render("./PUG/home")
+    res.render("./PUG/home",{
+        err:req.flash('err')
+    })
 }
 
 exports.assignment_13 = (req, res, next) => {    
