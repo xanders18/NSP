@@ -7,8 +7,8 @@ exports.chat_page =async (req, res, next) => {
         return res.redirect("/#account")
     }
     const user=await userModel.findOne({email:req.user_email})   
-    
-    socket.get(user.username)
+    console.log("WOII "+user.username)
+    socket.get(user.username.toString())
     res.render("./PUG/chat")
     //console.log(socket.get())
 }

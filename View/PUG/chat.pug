@@ -1,13 +1,14 @@
 html
     head 
         title Chat Finals
-
+        link(rel="stylesheet" href="../CSS/chat.css")
     body
-        .msg-container
+        div(id="active-user",class="active-user")
 
-        form(id="msgform")
-            input(type="text",id="msg")
-            button(type="submit",id="send") Send
-        
+        .msg-box
+            form(id="msgform")
+                input(type="text",id="msg")
+                button(type="submit",id="send") Send
+            
         script(src="/socket.io/socket.io.js")
         script(src="../JS/client.js",type="text/javascript")

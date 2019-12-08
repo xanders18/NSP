@@ -1,0 +1,26 @@
+.aboutme{
+    grid-row: 4/5;
+    background: black;
+    margin: 7rem 0;
+    margin-bottom: 0;
+    color:white;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    align-content: center;
+}
+
+.about-image{
+    grid-column: 1/2;
+    text-align: center;
+}
+
+.about-image img{
+    width:60%;
+    height:100%;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+.about-data{
+    margin-left: 3rem;
+    grid-column: 2/3;
+}

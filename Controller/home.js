@@ -8,11 +8,13 @@ const netHTML=require('./HTML-JS/net')
 let ipAddress,hostName,userIP
 
 
-const transporter=nodemailer.createTransport(sendgrid({
-    auth:{
-        api_key: "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"
+const transporter=nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'monkeydjoker01@gmail.com',
+        pass: 'president99'
     }
-}))
+})
 
 exports.mainPage=(req,res,next)=>{
     if(!req.logedIn){

@@ -9,21 +9,103 @@
 .login{
     grid-column: 1/2;  
     text-align: center;
-    border-right: 1px solid gray
+    border-right: 1px solid gray;
+    display:grid;
+    grid-template-columns: 15% 70%;
 }
 
 .sign-up{
     grid-column: 2/3;
-    text-align: center;
-    
+    text-align: center; 
+    display:grid;
+    grid-template-columns: 15% 70%;      
 }
 
-.login form{
+.sub-login,.sub-signup{
+    grid-column: 1/2;    
+    color:white;    
+}
+.sub-signup{
+    border-top-right-radius: 40px;  
+    border-bottom-right-radius: 40px;   
+    background:linear-gradient(rgba(0, 0, 0, 0.315),rgba(0, 0, 0, 0.308)),url(../image/acc1.jpg);
+    background-size: cover;
+    background-position: top 50% right 20% ;  
+    writing-mode: vertical-rl;  
+    box-shadow: 9px 9px 10px gray;
+}
+
+.sub-login{
+   border-top-right-radius: 40px; 
+   border-bottom-right-radius: 40px;  
+   background:linear-gradient(rgba(0, 0, 0, 0.315),rgba(0, 0, 0, 0.308)),url(../image/acc2.jpg);
+    background-size: cover;
+    background-position: top 50% right 20% ;    
+    writing-mode: vertical-rl;  
+    box-shadow: 9px 9px 10px rgba(0, 60, 255, 0.507);
+}
+
+.form-login,.form-signup{
+    grid-column: 2/3;
+}
+
+.form-login form{
     margin:0rem auto;
     margin-top: 12rem;
 }
 
-.sign-up form{   
+.form-signup form{   
     margin:0rem auto;
-    margin-top: 10.2rem;
+    margin-top: 9rem;
+}
+
+.data{
+    display: flex;    
+    flex-direction: column;
+    width:60%;
+    height:100%;
+    margin:auto;
+    margin-top: 9rem;
+}
+
+.inside-form img{
+    grid-column: 2/3;
+    width:100%;    
+    height: 100%;
+}
+
+.icon-Input{
+    position:relative;
+    margin-bottom: 1rem;
+}
+
+.icon-input i{
+    position: absolute;
+    top:0px;
+    left: 0;
+    padding: 4%;
+    width: 10%;
+    color: rgb(187, 255, 0);
+    transition: 0.3s;
+    background-color: rgba(0, 0, 0, 0.74);
+    border-radius: 5px 0 0 5px;
+}
+
+.icon-Input input{
+    padding: 3%;
+    padding-left: 19%;
+    outline: none;
+    border-radius: 5px;
+    border:1px solid gray;
+    width:100%
+}
+
+.icon-input input:focus{
+    border:1px solid rgb(187, 255, 0);
+    box-shadow: 0 0 10px 0 rgb(187, 255, 0);
+}
+
+.icon-input input:focus + i{
+    color:white;
+    background-color: rgb(187, 255, 0);
 }

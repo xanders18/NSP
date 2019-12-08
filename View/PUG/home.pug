@@ -4,9 +4,10 @@ html
         link(rel="stylesheet" href="../CSS/home.css")
         link(rel="stylesheet" href="../CSS/tool.css")
         link(rel="stylesheet" href="../CSS/login.css")
-    
+        link(rel="stylesheet" href="../CSS/about.css")
     
     body
+        script(src='https://kit.fontawesome.com/a076d05399.js')
         .main-page
             .main-nav
                 .nav-left
@@ -44,23 +45,50 @@ html
 
         div(class="account",id="account")
             .login 
-                form(method="post",action="/user/login")
-                    p #{err}
-                    p  
-                        input(type="text" name="email" placeholder="Email...")
-                    p  
-                        input(type="password" name="password" placeholder="Password...") 
-                    button(type="submit") Log In                               
+                .sub-login
+                    h1 Login
+                .form-login                    
+                    form(method="post",action="/user/login")
+                        .data
+                            p #{err}
+                            .icon-input
+                                input(type='email' placeholder='Email',name="email")
+                                i.fa.fa-user.fa-lg.fa-fw(aria-hidden='true')
+                            .icon-input
+                                input(type='password' placeholder='Password',name="password")
+                                i.fa.fa-lock.fa-lg.fa-fw(aria-hidden='true')
+                            button(type="submit") Log In 
+                        
+                                 
             .sign-up
-                form(method="post" action="/user/signup") 
-                    p #{signErr}
-                    p
-                        input(type="text",name="username",placeholder="Username")
-                    p  
-                        input(type="text" name="email" placeholder="Email")
-                    p  
-                        input(type="password" name="password" placeholder="Password") 
-                    p  
-                        input(type="password" name="checkpass" placeholder="Retype Password")
-                    
-                    button(type="submit") Sign Up        
+                .sub-signup
+                    h1 Sign-Up
+                .form-signup
+                    form(method="post" action="/user/signup") 
+                        
+                        .data
+                            p #{signErr}
+                            .icon-input
+                                input(type="text",name="username",placeholder="Username")
+                                i.fa.fa-male(aria-hidden='true')                        
+                            .icon-input
+                                input(type='email' placeholder='Email',name="email")
+                                i.fa.fa-user.fa-lg.fa-fw(aria-hidden='true')
+                            .icon-input
+                                input(type='password' placeholder='Password',name="password")
+                                i.fa.fa-lock.fa-lg.fa-fw(aria-hidden='true')
+                            .icon-input
+                                input(type="password" name="checkpass" placeholder="Retype Password")
+                                i.fa.fa-check(aria-hidden='true')
+                            button(type="submit") Sign Up     
+
+                        
+
+        div(class="aboutme",id="aboutme")  
+            .about-image
+                img(src="../image/me.jpg")
+            .about-data
+                h1 Alexander Kevin
+                h2 001201700016
+                h3 Subject : Network Socket Programming
+                p Contains : Network Resolver, File Manager, Socket Programming Using Socket.IO Framework
