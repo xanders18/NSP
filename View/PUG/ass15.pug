@@ -1,6 +1,8 @@
 html
-    body
+    body        
         form(method="post" action="/portbinding")
             input(type="text",name='domain')
             input(type="text",name='msg')
             input(type="submit",name="submit",value="send")
+        if data
+            p #{data}

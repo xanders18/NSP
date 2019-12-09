@@ -6,6 +6,8 @@ const sendgrid=require('nodemailer-sendgrid-transport')
 const netHTML=require('./HTML-JS/net')
 
 let ipAddress,hostName,userIP
+let text
+
 
 
 const transporter=nodemailer.createTransport({
@@ -75,22 +77,29 @@ exports.post_ass14 = async (req, res, next) => {
         });
 }
 
-exports.assignment_15 = (req, res, next) => {
-    res.render("./PUG/ass15")
+exports.assignment_15 = (req, res, next) => {    
+    res.render("./PUG/ass15",{
+        data:text
+    })
 }
 
 exports.post_ass15 = async (req, res, next) => {
+    text=""
     var exec = require('child_process').exec, child;
     child = await exec(`java -jar D:\\Kuliah\\Semester-7\\Project7\\NSP\\Source\\ass15.jar ${req.body.domain} ${req.body.msg}`,
         (error, data) => {
             console.log('stdout: ' + data);
-            const result = data.split(("\r", "\n"))
-            console.log(result);
-
+            const result = data.split(("\r", "\n"))            
+            result.map(data=>{
+                text+=data+" || "
+            })
+            
             if (error !== null) {
                 console.log('exec error: ' + error);
             }
+            return res.redirect("/portbinding")
         });
+    
 }
 
 exports.manage = (req, res, next) => {
@@ -143,6 +152,7 @@ exports.post_manage = async (req, res, next) => {
                 console.log('exec error: ' + error);
             }
         });
+    return res.redirect("/organizer")
 }
 
 exports.send_email=async (req,res,next)=>{
